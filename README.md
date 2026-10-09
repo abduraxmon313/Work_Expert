@@ -12,6 +12,7 @@ index.html            # barcha bo'limlar
 assets/css/style.css  # dizayn
 assets/js/main.js     # menyu, animatsiyalar, telefon maskasi, ariza formasi
 assets/js/config.js   # ariza formasi sozlamalari (Telegram)
+assets/js/i18n.js     # RU / EN tarjimalar
 assets/img/           # logo, favicon
 ```
 
@@ -20,7 +21,17 @@ assets/img/           # logo, favicon
 1. **Ariza formasi:** `assets/js/config.js` faylini to'ldiring:
    - `ENDPOINT`: o'zingizning server/proksi manzilingiz (tavsiya etiladi, chunki bot tokeni yashirin qoladi), **yoki**
    - `TG_TOKEN` va `TG_CHAT`: to'g'ridan-to'g'ri Telegram bot orqali yuborish (token ochiq ko'rinib turadi).
-2. **Filial ma'lumotlari** (`index.html`): Samarqand sh., Yusuf Hamadoniy ko'chasi 28 · +998 55 705-20-20 · ikromsattorov777@gmail.com · xarita: `39.661176, 66.963594`. Ish vaqti hozircha "Du–Sha, 09:00–18:00" — kerak bo'lsa o'zgartiring.
+2. **Ofislar** (`index.html`):
+   - Bosh ofis — Samarqand sh., Yusuf Hamadoniy ko'chasi 28 · +998 55 705-20-20 · ikromsattorov777@gmail.com · xarita: `39.661176, 66.963594` ([Apple Maps](https://maps.apple/p/wTWVK91sjNwEpD))
+   - Toshkent filiali — +998 55 055-63-63 · [work-expert.uz](https://work-expert.uz)
+   - Ish vaqti hozircha "Du–Sha, 09:00–18:00" — kerak bo'lsa o'zgartiring.
+
+## Tillar (UZ / RU / EN)
+
+- O'zbekcha matn `index.html` ichida turadi (`data-i18n="kalit"` atributi bilan).
+- Rus va ingliz tarjimalari `assets/js/i18n.js` da — xuddi shu kalitlar bo'yicha.
+- Yangi matn qo'shsangiz: HTML elementga `data-i18n="yangi.kalit"` bering va `i18n.js` dagi `ru` va `en` bo'limlariga tarjimasini yozing.
+- Tanlangan til brauzerda eslab qolinadi; havola orqali ham ochish mumkin: `?lang=ru`, `?lang=en`.
 
 ## Joylash (GitHub Pages)
 

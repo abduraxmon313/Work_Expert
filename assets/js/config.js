@@ -10,7 +10,7 @@
  *  - yoki TG_TOKEN + TG_CHAT: to'g'ridan-to'g'ri Telegram Bot API orqali yuborish
  */
 window.WE_CONFIG = {
-  BRANCH: "Samarqand",
+  OFFICE: "Samarqand (bosh ofis)",
   ENDPOINT: "",
   TG_TOKEN: "",   // masalan: "1234567890:AA...."
   TG_CHAT: "",    // masalan: "-100xxxxxxxxxx"

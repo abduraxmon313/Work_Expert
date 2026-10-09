@@ -14,5 +14,5 @@ window.WE_CONFIG = {
   ENDPOINT: "",
   TG_TOKEN: "",   // masalan: "1234567890:AA...."
   TG_CHAT: "",    // masalan: "-100xxxxxxxxxx"
-  PHONE: "+998 55 705-20-20"
+  PHONE: "+998 99 362-77-77"
 };

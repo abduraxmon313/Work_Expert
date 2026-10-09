@@ -432,7 +432,7 @@ svg { flex: none; }
 
 /* ---------- Footer ---------- */
 .footer { background: var(--navy-900); color: rgba(255,255,255,.62); padding: 72px 0 0; }
-.foot-grid { display: grid; grid-template-columns: 1.6fr 1fr 1.4fr 1fr; gap: 2.5rem; padding-bottom: 3rem; }
+.foot-grid { display: grid; grid-template-columns: 1.6fr 1fr 1.6fr; gap: 2.5rem; padding-bottom: 3rem; }
 .footer p { margin-top: 1.1rem; max-width: 320px; font-size: .92rem; }
 .footer h4 { color: #fff; font-size: .95rem; margin-bottom: 1.1rem; }
 .foot-grid > div > a:not(.brand) { display: block; padding: .3rem 0; font-size: .92rem; transition: color .2s; word-break: break-word; }

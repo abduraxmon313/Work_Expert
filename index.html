@@ -134,27 +134,80 @@
 
 <main>
 
-<!-- ============ HERO ============ -->
-<section class="hero" id="home">
-  <div class="hero-media" aria-hidden="true">
-    <img src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=2000&q=75&auto=format&fit=crop" alt="" fetchpriority="high" />
-  </div>
-  <div class="container hero-inner">
-    <div class="hero-content reveal">
-      <span class="kicker"><span class="kicker-line"></span><span data-i18n="hero.kicker">Rasmiy litsenziya №721809 · Samarqand · Toshkent</span></span>
-      <h1 data-i18n="hero.title">Xorijda rasmiy ish — <span class="accent">ishonchli hamkor</span> bilan</h1>
-      <p class="lead" data-i18n="hero.lead">Work Expert — O'zbekistondan chet elga ishga joylashtirish bo'yicha litsenziyalangan xususiy bandlik agentligi. Vakansiya tanlashdan tortib viza va parvozgacha bo'lgan barcha bosqichlarni professional jamoamiz o'z zimmasiga oladi.</p>
-      <div class="hero-cta">
-        <a href="#contact" class="btn btn-primary"><span data-i18n="hero.cta1">Bepul konsultatsiya</span>
+<!-- ============ HERO (scroll: uchish sahnasi) ============ -->
+<section class="hero flight" id="home">
+  <div class="flight-stage" id="flightStage">
+    <div class="fl-layer fl-ground" aria-hidden="true">
+      <img src="https://images.unsplash.com/photo-1464037866556-6812c9d1c72e?w=2000&q=75&auto=format&fit=crop" alt="" fetchpriority="high" />
+    </div>
+    <div class="fl-layer fl-sky" aria-hidden="true">
+      <img src="https://images.unsplash.com/photo-1499346030926-9a72daac6c63?w=2000&q=75&auto=format&fit=crop" alt="" loading="lazy" />
+    </div>
+    <div class="fl-shade" aria-hidden="true"></div>
+
+    <svg class="fl-trail" viewBox="0 0 1000 1000" aria-hidden="true">
+      <defs>
+        <linearGradient id="trailGrad" x1="0" y1="1" x2="1" y2="0">
+          <stop offset="0" stop-color="#fff" stop-opacity="0" />
+          <stop offset=".55" stop-color="#fff" stop-opacity=".35" />
+          <stop offset="1" stop-color="#fff" stop-opacity=".85" />
+        </linearGradient>
+      </defs>
+      <path id="flightPath" d="M 470 1080 C 560 760, 700 520, 1090 -90" fill="none" stroke="url(#trailGrad)" stroke-width="3" stroke-linecap="round"/>
+    </svg>
+
+    <div class="plane" id="plane" aria-hidden="true">
+      <svg viewBox="0 0 100 100">
+        <path d="M50 3c3.2 0 4.6 4.2 4.6 10.5V35L97 56.5v6.2L54.6 52.6V77L68 87.6v5.2L50 88.4l-18 4.4v-5.2L45.4 77V52.6L3 62.7v-6.2L45.4 35V13.5C45.4 7.2 46.8 3 50 3z"/>
+        <rect x="26.5" y="45" width="5" height="10" rx="2.4"/>
+        <rect x="68.5" y="45" width="5" height="10" rx="2.4"/>
+        <path class="plane-cockpit" d="M47.6 10.5c0-2.2 1-3.5 2.4-3.5s2.4 1.3 2.4 3.5v2.5h-4.8z"/>
+      </svg>
+    </div>
+
+    <div class="container fl-content">
+      <div class="hero-content fl-intro">
+        <span class="kicker"><span class="kicker-line"></span><span data-i18n="hero.kicker">Rasmiy litsenziya №721809 · Samarqand · Toshkent</span></span>
+        <h1 data-i18n="hero.title">Xorijda rasmiy ish — <span class="accent">ishonchli hamkor</span> bilan</h1>
+        <p class="lead" data-i18n="hero.lead">Work Expert — O'zbekistondan chet elga ishga joylashtirish bo'yicha litsenziyalangan xususiy bandlik agentligi. Vakansiya tanlashdan tortib viza va parvozgacha bo'lgan barcha bosqichlarni professional jamoamiz o'z zimmasiga oladi.</p>
+        <div class="hero-cta">
+          <a href="#contact" class="btn btn-primary"><span data-i18n="hero.cta1">Bepul konsultatsiya</span>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+          <a href="#countries" class="btn btn-outline-light" data-i18n="hero.cta2">Yo'nalishlar</a>
+        </div>
+        <ul class="hero-points">
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span data-i18n="hero.p1">Vositachilarsiz, bevosita ish beruvchilar</span></li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span data-i18n="hero.p2">Rasmiy mehnat shartnomasi</span></li>
+        </ul>
+      </div>
+
+      <div class="fl-board" aria-label="Parvozlar">
+        <div class="fb-head">
+          <span class="kicker"><span class="kicker-line"></span><span data-i18n="fb.kicker">Keyingi manzil</span></span>
+          <h2 data-i18n="fb.title">Yangi ish joyingiz sari parvoz</h2>
+        </div>
+        <div class="board">
+          <div class="board-top">
+            <span data-i18n="fb.from">Jo'nash: Samarqand (SKD)</span>
+            <span class="board-live" data-i18n="fb.open">Qabul ochiq</span>
+          </div>
+          <div class="board-row board-th">
+            <span data-i18n="fb.flight">Reys</span><span data-i18n="fb.dest">Manzil</span><span data-i18n="fb.sector">Soha</span><span data-i18n="fb.status">Holat</span>
+          </div>
+          <div class="board-row"><b>WE 101</b><span><img src="https://flagcdn.com/w40/pl.png" alt="" /><i data-i18n="c.pl">Polsha</i></span><span data-i18n="ind.1">Qurilish</span><em data-i18n="fb.boarding">Ro'yxat ochiq</em></div>
+          <div class="board-row"><b>WE 214</b><span><img src="https://flagcdn.com/w40/lt.png" alt="" /><i data-i18n="c.lt">Litva</i></span><span data-i18n="ind.3">Haydovchilar</span><em data-i18n="fb.boarding">Ro'yxat ochiq</em></div>
+          <div class="board-row"><b>WE 327</b><span><img src="https://flagcdn.com/w40/cz.png" alt="" /><i data-i18n="c.cz">Chexiya</i></span><span data-i18n="ind.2">Logistika va omborxona</span><em data-i18n="fb.boarding">Ro'yxat ochiq</em></div>
+          <div class="board-row"><b>WE 430</b><span><img src="https://flagcdn.com/w40/kr.png" alt="" /><i data-i18n="c.kr">Janubiy Koreya</i></span><span data-i18n="ind.4">Qishloq xo'jaligi</span><em data-i18n="fb.boarding">Ro'yxat ochiq</em></div>
+          <div class="board-row"><b>WE 552</b><span><img src="https://flagcdn.com/w40/jp.png" alt="" /><i data-i18n="c.jp">Yaponiya</i></span><span data-i18n="ind.5">Servis va mehmonxona</span><em data-i18n="fb.boarding">Ro'yxat ochiq</em></div>
+        </div>
+        <a href="#contact" class="btn btn-primary"><span data-i18n="fb.cta">Joyingizni band qiling</span>
           <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
         </a>
-        <a href="#countries" class="btn btn-outline-light" data-i18n="hero.cta2">Yo'nalishlar</a>
       </div>
-      <ul class="hero-points">
-        <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span data-i18n="hero.p1">Vositachilarsiz, bevosita ish beruvchilar</span></li>
-        <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span data-i18n="hero.p2">Rasmiy mehnat shartnomasi</span></li>
-      </ul>
     </div>
+
+    <div class="fl-hint" aria-hidden="true"><span class="mouse"><i></i></span><span data-i18n="hero.scroll">Pastga aylantiring — parvoz boshlanadi</span></div>
   </div>
 </section>
 
@@ -343,36 +396,56 @@
 
 <!-- ============ LICENSE ============ -->
 <section class="section" id="license">
-  <div class="container license">
-    <div class="reveal">
-      <span class="eyebrow" data-i18n="lic.eyebrow">Litsenziya</span>
-      <h2 data-i18n="lic.title">Faoliyatimiz to'liq qonuniy</h2>
-      <p class="muted" data-i18n="lic.text">Work Expert O'zbekiston Respublikasi qonunchiligiga muvofiq faoliyat yuritadi. Barcha shartnomalar rasmiy tuziladi va nomzod huquqlari himoya qilinadi.</p>
-      <ul class="checks">
-        <li data-i18n="lic.c1">Litsenziya <b>№721809</b> — Vazirlar Mahkamasi huzuridagi Migratsiya agentligi tomonidan berilgan.</li>
-        <li data-i18n="lic.c2">Litsenziya reyestri raqami: <b>L-256122</b> · STIR: <b>311739838</b></li>
-        <li data-i18n="lic.c3"><b>Cheksiz muddatli</b> litsenziya — 16.04.2025 dan amal qiladi.</li>
-        <li data-i18n="lic.c4">Barcha shartnomalar <b>rasmiy va qonuniy</b> tarzda rasmiylashtiriladi.</li>
-      </ul>
-    </div>
-    <div class="lic-card reveal" style="--d:.12s">
-      <div class="lic-top">
-        <div class="lic-brand">
-          <img src="assets/img/logo.png" alt="" width="48" height="48" loading="lazy" />
-          <span data-i18n="lic.eyebrow">Litsenziya</span>
-        </div>
-        <span class="badge-live" data-i18n="lic.active">Faol</span>
+  <div class="container">
+    <div class="sec-head split reveal">
+      <div>
+        <span class="eyebrow" data-i18n="lic.eyebrow">Litsenziya</span>
+        <h2 data-i18n="lic.title">Faoliyatimiz to'liq qonuniy</h2>
       </div>
-      <div class="lic-no">№721809</div>
-      <div class="lic-name" data-i18n="lic.company">Work Expert Xususiy Bandlik Agentligi MChJ</div>
-      <dl class="lic-grid">
-        <div><dt data-i18n="lic.reg">Reyestr raqami</dt><dd>L-256122</dd></div>
-        <div><dt data-i18n="lic.tin">STIR</dt><dd>311739838</dd></div>
-        <div><dt data-i18n="lic.date">Berilgan sana</dt><dd>16.04.2025</dd></div>
-        <div><dt data-i18n="lic.term">Amal qilish muddati</dt><dd data-i18n="lic.unlimited">Cheksiz</dd></div>
-      </dl>
-      <div class="lic-foot" data-i18n="lic.authority">Vakolatli organ: Vazirlar Mahkamasi huzuridagi Migratsiya agentligi</div>
+      <p data-i18n="lic.text">Work Expert O'zbekiston Respublikasi qonunchiligiga muvofiq faoliyat yuritadi. Barcha shartnomalar rasmiy tuziladi va nomzod huquqlari himoya qilinadi.</p>
     </div>
+
+    <div class="lic-showcase">
+      <figure class="lic-photo reveal">
+        <img src="assets/img/license-ceremony.jpg" width="1024" height="683" loading="lazy"
+             alt="Migratsiya agentligida Work Expert'ga litsenziya topshirish marosimi"
+             data-i18n-alt="lic.photoAlt"
+             onerror="this.parentNode.classList.add('noimg')" />
+        <div class="lic-photo-fallback" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path d="M12 2 4 5v6c0 5 3.4 9.7 8 11 4.6-1.3 8-6 8-11V5z"/><path d="m9 12 2 2 4-4"/></svg>
+        </div>
+        <figcaption>
+          <span class="lic-photo-tag" data-i18n="lic.photoTag">Rasmiy marosim</span>
+          <span data-i18n="lic.photo">Litsenziyani topshirish marosimi — O'zbekiston Respublikasi Migratsiya agentligi</span>
+        </figcaption>
+      </figure>
+
+      <div class="lic-card reveal" style="--d:.12s">
+        <div class="lic-top">
+          <div class="lic-brand">
+            <img src="assets/img/logo.png" alt="" width="48" height="48" loading="lazy" />
+            <span data-i18n="lic.eyebrow">Litsenziya</span>
+          </div>
+          <span class="badge-live" data-i18n="lic.active">Faol</span>
+        </div>
+        <div class="lic-no">№721809</div>
+        <div class="lic-name" data-i18n="lic.company">Work Expert Xususiy Bandlik Agentligi MChJ</div>
+        <dl class="lic-grid">
+          <div><dt data-i18n="lic.reg">Reyestr raqami</dt><dd>L-256122</dd></div>
+          <div><dt data-i18n="lic.tin">STIR</dt><dd>311739838</dd></div>
+          <div><dt data-i18n="lic.date">Berilgan sana</dt><dd>16.04.2025</dd></div>
+          <div><dt data-i18n="lic.term">Amal qilish muddati</dt><dd data-i18n="lic.unlimited">Cheksiz</dd></div>
+        </dl>
+        <div class="lic-foot" data-i18n="lic.authority">Vakolatli organ: Vazirlar Mahkamasi huzuridagi Migratsiya agentligi</div>
+      </div>
+    </div>
+
+    <ul class="checks checks-row">
+      <li class="reveal" data-i18n="lic.c1">Litsenziya <b>№721809</b> — Vazirlar Mahkamasi huzuridagi Migratsiya agentligi tomonidan berilgan.</li>
+      <li class="reveal" style="--d:.06s" data-i18n="lic.c2">Litsenziya reyestri raqami: <b>L-256122</b> · STIR: <b>311739838</b></li>
+      <li class="reveal" style="--d:.12s" data-i18n="lic.c3"><b>Cheksiz muddatli</b> litsenziya — 16.04.2025 dan amal qiladi.</li>
+      <li class="reveal" style="--d:.18s" data-i18n="lic.c4">Barcha shartnomalar <b>rasmiy va qonuniy</b> tarzda rasmiylashtiriladi.</li>
+    </ul>
   </div>
 </section>
 

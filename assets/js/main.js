@@ -19,6 +19,7 @@
   $$("[data-i18n-ph]").forEach(function (el) { var k = el.getAttribute("data-i18n-ph"); if (!(k in DICT.uz)) DICT.uz[k] = el.getAttribute("placeholder"); });
   $$("[data-i18n-aria]").forEach(function (el) { var k = el.getAttribute("data-i18n-aria"); if (!(k in DICT.uz)) DICT.uz[k] = el.getAttribute("aria-label"); });
   $$("[data-i18n-content]").forEach(function (el) { var k = el.getAttribute("data-i18n-content"); if (!(k in DICT.uz)) DICT.uz[k] = el.getAttribute("content"); });
+  $$("[data-i18n-alt]").forEach(function (el) { var k = el.getAttribute("data-i18n-alt"); if (!(k in DICT.uz)) DICT.uz[k] = el.getAttribute("alt"); });
 
   function t(key) {
     var d = DICT[lang] || {};
@@ -35,6 +36,7 @@
     $$("[data-i18n-ph]").forEach(function (el) { el.setAttribute("placeholder", t(el.getAttribute("data-i18n-ph"))); });
     $$("[data-i18n-aria]").forEach(function (el) { el.setAttribute("aria-label", t(el.getAttribute("data-i18n-aria"))); });
     $$("[data-i18n-content]").forEach(function (el) { el.setAttribute("content", t(el.getAttribute("data-i18n-content"))); });
+    $$("[data-i18n-alt]").forEach(function (el) { el.setAttribute("alt", t(el.getAttribute("data-i18n-alt"))); });
     $("#langCur").textContent = lang.toUpperCase();
     $$("#langMenu [data-lang]").forEach(function (b) { b.setAttribute("aria-checked", String(b.dataset.lang === lang)); });
     try { localStorage.setItem("we_lang", lang); } catch (e) {}
@@ -66,6 +68,55 @@
   }
   burger.addEventListener("click", function () { setLangMenu(false); setMenu(!links.classList.contains("open")); });
   $$("#navLinks a").forEach(function (a) { a.addEventListener("click", function () { setMenu(false); }); });
+
+  /* ---------- Flight hero: scroll bilan samolyot uchishi ---------- */
+  (function () {
+    var hero = $("#home"), stage = $("#flightStage"), plane = $("#plane"), svg = $(".fl-trail"), path = $("#flightPath");
+    if (!hero || !stage || !plane || !path) return;
+    if (window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    hero.classList.add("is-anim");
+
+    var W = 0, H = 0, len = 0, ticking = false;
+    function seg(p, a, b) { return Math.min(1, Math.max(0, (p - a) / (b - a))); }
+    function ease(x) { return x < .5 ? 2 * x * x : 1 - Math.pow(-2 * x + 2, 2) / 2; }
+
+    // Uchish trayektoriyasi (ekran o'lchamiga nisbatan), piksel koordinatalarda quriladi
+    function build() {
+      W = stage.clientWidth; H = stage.clientHeight;
+      var m = W < 700;
+      var k = m ? [[.80, 1.06], [.86, .80], [.90, .55], [1.18, -.10]]
+                : [[.60, 1.08], [.66, .78], [.77, .52], [1.09, -.09]];
+      var P = k.map(function (q) { return (q[0] * W).toFixed(1) + " " + (q[1] * H).toFixed(1); });
+      svg.setAttribute("viewBox", "0 0 " + W + " " + H);
+      path.setAttribute("d", "M " + P[0] + " C " + P[1] + ", " + P[2] + ", " + P[3]);
+      len = path.getTotalLength();
+      path.style.strokeDasharray = len;
+      plane.style.setProperty("--ps", m ? "86px" : "150px");
+    }
+
+    function render() {
+      ticking = false;
+      var total = hero.offsetHeight - stage.offsetHeight;
+      var p = total > 0 ? Math.min(1, Math.max(0, -hero.getBoundingClientRect().top / total)) : 0;
+      var fly = seg(p, 0, .62);
+      var fp = .2 + .8 * ease(fly);
+      var a = path.getPointAtLength(fp * len), b = path.getPointAtLength(Math.min(len, fp * len + 2));
+      var ang = Math.atan2(b.y - a.y, b.x - a.x) * 180 / Math.PI + 90;
+      var sc = 1.05 - .62 * fly;
+      plane.style.transform = "translate(" + a.x.toFixed(1) + "px," + a.y.toFixed(1) + "px) translate(-50%,-50%) rotate(" + ang.toFixed(2) + "deg) scale(" + sc.toFixed(3) + ")";
+      path.style.strokeDashoffset = (len * (1 - fp)).toFixed(1);
+      stage.style.setProperty("--t1", seg(p, .02, .3).toFixed(4));        // kirish matni ketadi
+      stage.style.setProperty("--t2", ease(seg(p, .12, .6)).toFixed(4));  // yer -> bulutlar
+      stage.style.setProperty("--t3", ease(seg(p, .56, .8)).toFixed(4));  // parvozlar jadvali
+      hero.classList.toggle("board-on", p > .6);
+      hero.classList.toggle("intro-off", p > .3);
+    }
+    function req() { if (!ticking) { ticking = true; requestAnimationFrame(render); } }
+
+    build(); render();
+    window.addEventListener("scroll", req, { passive: true });
+    window.addEventListener("resize", function () { build(); req(); });
+  })();
 
   /* ---------- Active section highlight ---------- */
   var navMap = {};

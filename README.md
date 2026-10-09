@@ -26,6 +26,8 @@ assets/img/           # logo, favicon
    - Toshkent filiali — +998 55 055-63-63 · [work-expert.uz](https://work-expert.uz)
    - Ish vaqti hozircha "Du–Sha, 09:00–18:00" — kerak bo'lsa o'zgartiring.
 
+3. **Litsenziya marosimi surati:** `assets/img/license-ceremony.jpg` nomi bilan yuklang (Litsenziya bo'limida chiqadi). Fayl bo'lmasa, o'rnida zaxira fon ko'rinadi.
+
 ## Tillar (UZ / RU / EN)
 
 - O'zbekcha matn `index.html` ichida turadi (`data-i18n="kalit"` atributi bilan).

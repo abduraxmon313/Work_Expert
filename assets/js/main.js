@@ -76,7 +76,7 @@
     if (window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches) return;
     hero.classList.add("is-anim");
 
-    var W = 0, H = 0, len = 0, ticking = false;
+    var W = 0, H = 0, len = 0, f0 = .2, mob = false, ticking = false;
     function seg(p, a, b) { return Math.min(1, Math.max(0, (p - a) / (b - a))); }
     function ease(x) { return x < .5 ? 2 * x * x : 1 - Math.pow(-2 * x + 2, 2) / 2; }
 
@@ -84,31 +84,32 @@
     function build() {
       W = stage.clientWidth; H = stage.clientHeight;
       var m = W < 700;
-      var k = m ? [[.80, 1.06], [.86, .80], [.90, .55], [1.18, -.10]]
+      f0 = m ? .3 : .2; mob = m;
+      var k = m ? [[.18, 1.10], [.40, .90], [.66, .64], [1.22, -.06]]
                 : [[.60, 1.08], [.66, .78], [.77, .52], [1.09, -.09]];
       var P = k.map(function (q) { return (q[0] * W).toFixed(1) + " " + (q[1] * H).toFixed(1); });
       svg.setAttribute("viewBox", "0 0 " + W + " " + H);
       path.setAttribute("d", "M " + P[0] + " C " + P[1] + ", " + P[2] + ", " + P[3]);
       len = path.getTotalLength();
       path.style.strokeDasharray = len;
-      plane.style.setProperty("--ps", m ? "86px" : "150px");
+      plane.style.setProperty("--ps", m ? "104px" : "150px");
     }
 
     function render() {
       ticking = false;
       var total = hero.offsetHeight - stage.offsetHeight;
       var p = total > 0 ? Math.min(1, Math.max(0, -hero.getBoundingClientRect().top / total)) : 0;
-      var fly = seg(p, 0, .62);
-      var fp = .2 + .8 * ease(fly);
+      var fly = mob ? seg(p, 0, .55) : seg(p, 0, .62);
+      var fp = f0 + (1 - f0) * ease(fly);
       var a = path.getPointAtLength(fp * len), b = path.getPointAtLength(Math.min(len, fp * len + 2));
       var ang = Math.atan2(b.y - a.y, b.x - a.x) * 180 / Math.PI + 90;
       var sc = 1.05 - .62 * fly;
       plane.style.transform = "translate(" + a.x.toFixed(1) + "px," + a.y.toFixed(1) + "px) translate(-50%,-50%) rotate(" + ang.toFixed(2) + "deg) scale(" + sc.toFixed(3) + ")";
       path.style.strokeDashoffset = (len * (1 - fp)).toFixed(1);
       stage.style.setProperty("--t1", seg(p, .02, .3).toFixed(4));        // kirish matni ketadi
-      stage.style.setProperty("--t2", ease(seg(p, .12, .6)).toFixed(4));  // yer -> bulutlar
-      stage.style.setProperty("--t3", ease(seg(p, .56, .8)).toFixed(4));  // parvozlar jadvali
-      hero.classList.toggle("board-on", p > .6);
+      stage.style.setProperty("--t2", ease(mob ? seg(p, .1, .48) : seg(p, .12, .6)).toFixed(4));  // yer -> bulutlar
+      stage.style.setProperty("--t3", ease(mob ? seg(p, .44, .66) : seg(p, .56, .8)).toFixed(4)); // parvozlar jadvali
+      hero.classList.toggle("board-on", p > (mob ? .5 : .6));
       hero.classList.toggle("intro-off", p > .3);
     }
     function req() { if (!ticking) { ticking = true; requestAnimationFrame(render); } }

@@ -20,7 +20,7 @@ assets/img/           # logo, favicon
 1. **Ariza formasi:** `assets/js/config.js` faylini to'ldiring:
    - `ENDPOINT`: o'zingizning server/proksi manzilingiz (tavsiya etiladi, chunki bot tokeni yashirin qoladi), **yoki**
    - `TG_TOKEN` va `TG_CHAT`: to'g'ridan-to'g'ri Telegram bot orqali yuborish (token ochiq ko'rinib turadi).
-2. **Filial ma'lumotlari:** `index.html` faylidagi `TODO` izohlarini toping va Samarqand filialining telefon raqami, manzili, ish vaqti hamda Google Maps havolasini kiriting. Hozircha Toshkent ofisining telefon va emaili turibdi.
+2. **Filial ma'lumotlari** (`index.html`): Samarqand sh., Yusuf Hamadoniy ko'chasi 28 · +998 55 705-20-20 · ikromsattorov777@gmail.com · xarita: `39.661176, 66.963594`. Ish vaqti hozircha "Du–Sha, 09:00–18:00" — kerak bo'lsa o'zgartiring.
 
 ## Joylash (GitHub Pages)
 

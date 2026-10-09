@@ -1,7 +1,6 @@
 # Work Expert — Samarqand filiali
 
 Work Expert Xususiy Bandlik Agentligining Samarqand filiali uchun sayt (litsenziya №721809).
-Bosh ofis sayti: [work-expert.uz](https://work-expert.uz).
 
 Oddiy statik sayt (HTML + CSS + JS), build yoki framework kerak emas.
 
@@ -21,9 +20,8 @@ assets/img/           # logo, favicon
 1. **Ariza formasi:** `assets/js/config.js` faylini to'ldiring:
    - `ENDPOINT`: o'zingizning server/proksi manzilingiz (tavsiya etiladi, chunki bot tokeni yashirin qoladi), **yoki**
    - `TG_TOKEN` va `TG_CHAT`: to'g'ridan-to'g'ri Telegram bot orqali yuborish (token ochiq ko'rinib turadi).
-2. **Ofislar** (`index.html`):
-   - Bosh ofis — Samarqand sh., Yusuf Hamadoniy ko'chasi 28 · +998 55 705-20-20 · ikromsattorov777@gmail.com · xarita: `39.661176, 66.963594` ([Apple Maps](https://maps.apple/p/wTWVK91sjNwEpD))
-   - Toshkent filiali — +998 55 055-63-63 · [work-expert.uz](https://work-expert.uz)
+2. **Ofis** (`index.html`):
+   - Bosh ofis — Samarqand sh., Yusuf Hamadoniy ko'chasi 28 · +998 99 362-77-77 · ikromsattorov777@gmail.com · xarita: `39.661176, 66.963594` ([Apple Maps](https://maps.apple/p/wTWVK91sjNwEpD))
    - Ish vaqti hozircha "Du–Sha, 09:00–18:00" — kerak bo'lsa o'zgartiring.
 
 3. **Litsenziya marosimi surati:** `assets/img/license-ceremony.jpg` nomi bilan yuklang (Litsenziya bo'limida chiqadi). Fayl bo'lmasa, o'rnida zaxira fon ko'rinadi.

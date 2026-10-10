@@ -578,7 +578,7 @@ body.no-scroll { overflow: hidden; }
   .fb-head h2 { font-size: 1.7rem; }
   .fl-board .btn { width: 100%; }
   .office .c-list { grid-template-columns: 1fr; }
-  .lic-photo { min-height: 0; aspect-ratio: 4 / 3; }
+  .lic-photo { min-height: 0; aspect-ratio: 3 / 4; }
   .checks-row { grid-template-columns: 1fr; }
   .hero-cta .btn { flex: 1 1 100%; }
   .kpi-item { padding: 1.3rem 1.2rem; }

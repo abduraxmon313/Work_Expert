@@ -43,3 +43,10 @@ Settings → Pages → Branch: `main` / `(root)`. O'z domeningiz bo'lsa (masalan
 python3 -m http.server 8080
 # http://localhost:8080
 ```
+
+## SEO
+
+- `robots.txt` va `sitemap.xml` — ildiz papkada, statik fayl sifatida beriladi.
+- Sayt bitta sahifadan iborat, shuning uchun sitemap'da faqat `https://work-expert-xba.uz/` bor. Til (`?lang=ru`, `?lang=en`) brauzerda JS orqali almashadi va alohida sahifa emas — canonical har doim `/` ga ishora qiladi.
+- `vercel.json`: `www.work-expert-xba.uz` → `work-expert-xba.uz` va `/index.html` → `/` doimiy (308) yo'naltirishlari.
+- Yangi sahifa qo'shilsa, uni `sitemap.xml` ga qo'shing va `<lastmod>` sanasini yangilang.

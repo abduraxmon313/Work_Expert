@@ -6,15 +6,27 @@
   <title data-i18n="meta.title">Work Expert — Xususiy Bandlik Agentligi | Samarqand</title>
   <meta name="description" data-i18n-content="meta.desc" content="Work Expert — chet elda rasmiy ish. Ofis Samarqandda. Litsenziya №721809. Germaniya, Isroil, Polsha, Litva, Latviya, Chexiya, Slovakiya, Yaponiya va boshqa davlatlarda ish o'rinlari. Bepul maslahat." />
   <meta name="keywords" content="Samarqand, chet elda ish, bandlik agentligi, Work Expert, Polsha ish, Germaniya ish, Isroil ish, haydovchi, qurilish, viza, ishga joylashtirish, работа за границей, jobs abroad" />
+  <meta name="robots" content="index, follow, max-image-preview:large" />
+  <link rel="canonical" href="https://work-expert-xba.uz/" />
   <meta name="theme-color" content="#1b1356" />
 
   <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Work Expert" />
+  <meta property="og:url" content="https://work-expert-xba.uz/" />
   <meta property="og:title" content="Work Expert — Chet elda rasmiy ish" />
   <meta property="og:description" content="Rasmiy litsenziyali xususiy bandlik agentligi. Bosh ofis — Samarqand. Bepul maslahat oling!" />
-  <meta property="og:image" content="assets/img/og-icon.png" />
+  <meta property="og:image" content="https://work-expert-xba.uz/assets/img/og-icon.png" />
+  <meta property="og:image:type" content="image/png" />
+  <meta property="og:image:width" content="512" />
+  <meta property="og:image:height" content="512" />
+  <meta property="og:image:alt" content="Work Expert logotipi" />
   <meta property="og:locale" content="uz_UZ" />
   <meta property="og:locale:alternate" content="ru_RU" />
   <meta property="og:locale:alternate" content="en_US" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Work Expert — Chet elda rasmiy ish" />
+  <meta name="twitter:description" content="Rasmiy litsenziyali xususiy bandlik agentligi. Bosh ofis — Samarqand. Bepul maslahat oling!" />
+  <meta name="twitter:image" content="https://work-expert-xba.uz/assets/img/og-icon.png" />
 
   <link rel="icon" type="image/png" href="assets/img/favicon.png" />
   <link rel="apple-touch-icon" href="assets/img/og-icon.png" />
@@ -28,21 +40,43 @@
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "EmploymentAgency",
-    "name": "Work Expert Xususiy Bandlik Agentligi",
-    "telephone": "+998993627777",
-    "email": "ikromsattorov777@gmail.com",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "Yusuf Hamadoniy ko'chasi, 28",
-      "addressLocality": "Samarqand",
-      "addressCountry": "UZ"
-    },
-    "geo": { "@type": "GeoCoordinates", "latitude": 39.661176, "longitude": 66.963594 },
-    "hasMap": "https://maps.apple/p/wTWVK91sjNwEpD",
-    "openingHours": "Mo-Sa 09:00-18:00",
-    "availableLanguage": ["uz", "ru", "en"],
-    "sameAs": ["https://www.instagram.com/work_expert.uz/", "https://t.me/WORKEXPERT_XB"]
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "@id": "https://work-expert-xba.uz/#website",
+        "url": "https://work-expert-xba.uz/",
+        "name": "Work Expert",
+        "inLanguage": ["uz", "ru", "en"],
+        "publisher": { "@id": "https://work-expert-xba.uz/#organization" }
+      },
+      {
+        "@type": "EmploymentAgency",
+        "@id": "https://work-expert-xba.uz/#organization",
+        "name": "Work Expert Xususiy Bandlik Agentligi",
+        "url": "https://work-expert-xba.uz/",
+        "logo": "https://work-expert-xba.uz/assets/img/logo.png",
+        "image": "https://work-expert-xba.uz/assets/img/og-icon.png",
+        "telephone": "+998993627777",
+        "email": "ikromsattorov777@gmail.com",
+        "taxID": "311739838",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Yusuf Hamadoniy ko'chasi, 28",
+          "addressLocality": "Samarqand",
+          "addressCountry": "UZ"
+        },
+        "geo": { "@type": "GeoCoordinates", "latitude": 39.661176, "longitude": 66.963594 },
+        "hasMap": "https://maps.apple/p/wTWVK91sjNwEpD",
+        "openingHoursSpecification": [{
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+          "opens": "09:00",
+          "closes": "18:00"
+        }],
+        "availableLanguage": ["uz", "ru", "en"],
+        "sameAs": ["https://www.instagram.com/work_expert.uz/", "https://t.me/WORKEXPERT_XB"]
+      }
+    ]
   }
   </script>
 </head>

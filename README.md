@@ -50,3 +50,5 @@ python3 -m http.server 8080
 - Sayt bitta sahifadan iborat, shuning uchun sitemap'da faqat `https://work-expert-xba.uz/` bor. Til (`?lang=ru`, `?lang=en`) brauzerda JS orqali almashadi va alohida sahifa emas — canonical har doim `/` ga ishora qiladi.
 - `vercel.json`: `www.work-expert-xba.uz` → `work-expert-xba.uz` va `/index.html` → `/` doimiy (308) yo'naltirishlari.
 - Yangi sahifa qo'shilsa, uni `sitemap.xml` ga qo'shing va `<lastmod>` sanasini yangilang.
+- Brend rasmlari: `assets/img/work-expert-logo.png` (logo), `assets/img/work-expert-og.png` (1200×630, ijtimoiy tarmoq ulashish rasmi), `favicon.ico` (16/32/48), `assets/img/favicon-48.png`, `favicon-192.png`, `apple-touch-icon.png` (180×180) va `site.webmanifest`.
+- Structured data (JSON-LD): `WebSite` + `EmploymentAgency` — nom, alternateName, litsenziya raqami, manzil, koordinatalar, telefon, ish vaqti, Telegram/Instagram (`sameAs`). Ma'lumot o'zgarsa, `index.html` dagi JSON-LD ni ham yangilang.

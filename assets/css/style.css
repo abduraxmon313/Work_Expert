@@ -215,6 +215,7 @@ svg { flex: none; }
 .kicker-line { width: 36px; height: 2px; background: var(--cyan); }
 .hero h1 { color: #fff; font-size: clamp(2.3rem, 5vw, 3.9rem); font-weight: 800; letter-spacing: -.03em; line-height: 1.08; margin-bottom: .55em; }
 .hero h1 .accent { color: var(--cyan); }
+.h1-brand { display: block; margin-bottom: .45rem; font-size: .38em; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; color: rgba(255,255,255,.92); }
 .lead { font-size: clamp(1rem, 1.3vw, 1.13rem); color: rgba(255,255,255,.8); max-width: 600px; margin-bottom: 2.2rem; }
 .hero-cta { display: flex; flex-wrap: wrap; gap: .9rem; margin-bottom: 2.2rem; }
 .hero-points { list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; gap: .6rem 1.8rem; font-size: .93rem; color: rgba(255,255,255,.85); }

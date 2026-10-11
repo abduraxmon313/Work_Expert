@@ -1,9 +1,23 @@
 {
+  "cleanUrls": false,
+  "trailingSlash": false,
   "redirects": [
     {
-      "source": "/:path*",
+      "source": "/",
       "has": [{ "type": "host", "value": "www.work-expert-xba.uz" }],
-      "destination": "https://work-expert-xba.uz/:path*",
+      "destination": "https://work-expert-xba.uz/",
+      "permanent": true
+    },
+    {
+      "source": "/index.html",
+      "has": [{ "type": "host", "value": "www.work-expert-xba.uz" }],
+      "destination": "https://work-expert-xba.uz/",
+      "permanent": true
+    },
+    {
+      "source": "/(.*)",
+      "has": [{ "type": "host", "value": "www.work-expert-xba.uz" }],
+      "destination": "https://work-expert-xba.uz/$1",
       "permanent": true
     },
     {
@@ -20,6 +34,14 @@
     {
       "source": "/robots.txt",
       "headers": [{ "key": "Content-Type", "value": "text/plain; charset=utf-8" }]
+    },
+    {
+      "source": "/site.webmanifest",
+      "headers": [{ "key": "Content-Type", "value": "application/manifest+json; charset=utf-8" }]
+    },
+    {
+      "source": "/assets/(.*)",
+      "headers": [{ "key": "Cache-Control", "value": "public, max-age=86400, must-revalidate" }]
     }
   ]
 }
